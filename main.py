@@ -1,4 +1,3 @@
-from webserver import keep_alive
 import os
 import discord
 from asyncio import sleep
@@ -389,5 +388,4 @@ async def hi(ctx):
  
 
 
-keep_alive()
 client.run("ODM4Nzc2ODkxODA4NDE1ODQ0.YJAB2g.UY6L9pO2Tbt1dGBgcaQseKBMnXk")
