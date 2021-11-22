@@ -17,3 +17,4 @@ soupsieve
 typing-extensions
 urllib3
 discord-components
+pillow
