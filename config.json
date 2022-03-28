@@ -1,7 +1,6 @@
 {
   "bot_prefix": "m!",
-  "token": "ODM4Nzc2ODkxODA4NDE1ODQ0.YJAB2g.UY6L9pO2Tbt1dGBgcaQseKBMnXk",
-  "application_id": "838776891808415844",
-  "owners": [468033389786824734, 513713427395510272, 652953834360143876
-    ]
+  "token": "",
+  "application_id": "",
+  "owners": [] //Можно через запятую
 }
