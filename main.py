@@ -161,86 +161,6 @@ async def jack(ctx, *, text="Вы не чего не написали."):
 
 #Тестовые команды
 
-b = [
-    [
-        Button(style=ButtonStyle.grey, label='Забанить'),
-        Button(style=ButtonStyle.grey, label='Кикнуть'),
-        Button(style=ButtonStyle.grey, label='Закрыть'),
-    ],
-]
-b_ban = [
-    [
-        Button(style=ButtonStyle.green, disabled=True, label='Забанить'),
-        Button(style=ButtonStyle.grey, disabled=True, label='Кикнуть'),
-        Button(style=ButtonStyle.grey, disabled=True, label='Закрыть'),
-    ],
-]
-b_kick = [
-    [
-        Button(style=ButtonStyle.grey, disabled=True, label='Забанить'),
-        Button(style=ButtonStyle.green, disabled=True, label='Кикнуть'),
-        Button(style=ButtonStyle.grey, disabled=True, label='Закрыть'),
-    ],
-]
-b_exit = [
-    [
-        Button(style=ButtonStyle.grey, disabled=True, label='Забанить'),
-        Button(style=ButtonStyle.grey, disabled=True, label='Кикнуть'),
-        Button(style=ButtonStyle.green, disabled=True, label='Закрыть'),
-    ],
-]
-
-
-@client.command()
-@commands.has_permissions(administrator=True)
-async def console(ctx, user: discord.Member):
-    m = await ctx.send(content='Подождите...')
-    delta = datetime.datetime.utcnow() + datetime.timedelta(minutes=5)
-    e = discord.Embed(title=f'Выберите действие',
-                      description=f"Пользователь {user}",
-                      timestamp=datetime.datetime.utcnow())
-    await m.edit(content='', components=b, embed=e)
-    while m.created_at < delta:
-        res = await client.wait_for('button_click')
-        if res.author.id == ctx.author.id and res.message.embeds[
-                0].timestamp < delta:
-            if res.component.label == 'Закрыть':
-                f = discord.Embed(title=f'Успешно!',
-                                  description=f'Команда закрыта.',
-                                  timestamp=datetime.datetime.utcnow())
-                await res.respond(content='',
-                                  embed=f,
-                                  components=b_exit,
-                                  type=7)
-                break
-            elif res.component.label == 'Забанить':
-                f = discord.Embed(
-                    title=f'Успешно!',
-                    description=f'Пользователь {user} был забанен.',
-                    timestamp=datetime.datetime.utcnow())
-                await res.respond(content='',
-                                  embed=f,
-                                  components=b_ban,
-                                  type=7)
-                await user.ban(reason=f"Забанен пользователем {ctx.author}")
-                break
-            elif res.component.label == 'Кикнуть':
-                f = discord.Embed(
-                    title=f'Успешно!',
-                    description=f"Пользователь {user} был кикнут.",
-                    timestamp=datetime.datetime.utcnow())
-                await res.respond(content='',
-                                  embed=f,
-                                  components=b_kick,
-                                  type=7)
-                await user.kick(reason=f"Кикнут пользователем {ctx.author}")
-                break
-            else:
-                f = discord.Embed(title=f'Выберите действие',
-                                  description=f'Пользователь {user}',
-                                  timestamp=datetime.datetime.utcnow())
-                await res.respond(content='', embed=f, components=b, type=7)
-
 @client.command()
 async def server(ctx):
     name = str(ctx.guild.name)
@@ -388,4 +308,4 @@ async def hi(ctx):
  
 
 
-client.run("ODM4Nzc2ODkxODA4NDE1ODQ0.YJAB2g.UY6L9pO2Tbt1dGBgcaQseKBMnXk")
+client.run("")
