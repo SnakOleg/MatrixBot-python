@@ -7,7 +7,6 @@ import asyncio
 import random
 from time import sleep
 import datetime
-import discord
 from PIL import Image, ImageFont, ImageDraw
 import json
 import sys
