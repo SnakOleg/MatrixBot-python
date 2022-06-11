@@ -2,5 +2,5 @@
   "bot_prefix": "m!",
   "token": "",
   "application_id": "",
-  "owners": [] //Можно через запятую
+  "owners": []
 }
