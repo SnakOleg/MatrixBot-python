@@ -12,7 +12,6 @@ import json
 import sys
 import platform
 from discord import client
-from discord.ext import commands
 from discord.ext import commands, tasks
 from config import acces
 from discord_components import *
